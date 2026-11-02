@@ -13,6 +13,8 @@ from odoo.addons.product_brand.tests.common import CommonCase
 
 
 class TestBrandTags(CommonCase):
+    _test_user_groups = CommonCase._test_user_groups + ("base.group_partner_manager",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

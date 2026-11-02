@@ -4,7 +4,7 @@
 from lxml import html
 
 from odoo.tests import Form, TransactionCase, tagged
-from odoo.tools import BinaryValue
+from odoo.tools import BinaryValue, is_html_empty
 
 
 @tagged("post_install", "-at_install")
@@ -145,6 +145,7 @@ class TestBrandExternalReportLayout(TransactionCase):
                 "o": self.brand.partner_id,
                 "res_company": self.env.company,
                 "report_type": "html",
+                "is_html_empty": is_html_empty,
             },
         )
         self.assertIn(f"o_brand_{self.brand.id}_layout", report)
@@ -160,6 +161,7 @@ class TestBrandExternalReportLayout(TransactionCase):
                 "o": document,
                 "res_company": self.env.company,
                 "report_type": "html",
+                "is_html_empty": is_html_empty,
             },
         )
         self.assertIn(f"o_brand_{self.brand.id}_layout", report)
@@ -173,6 +175,7 @@ class TestBrandExternalReportLayout(TransactionCase):
                 "o": document,
                 "res_company": self.env.company,
                 "report_type": "html",
+                "is_html_empty": is_html_empty,
             },
         )
         self.assertIn(f"o_company_{self.env.company.id}_layout", report)
