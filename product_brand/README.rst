@@ -44,7 +44,7 @@ Usage
 
 To create a new brand:
 
-1. Go to **Sales > Configuration > Products > Product Brands**.
+1. Go to **Sales > Products > Product Brands**.
 2. You can set its logo, associate a partner and add a description.
 
 *Note:* You must have the **Sales** addon installed.
@@ -70,9 +70,9 @@ To see the invoice report based on brand dimension:
 Known issues / Roadmap
 ======================
 
--  Add a field with brands associated to a Customer or Supplier on the
-   Customers/Suppliers Form View.
--  Fix smart button alignment in brand form view
+- Add a field with brands associated to a Customer or Supplier on the
+  Customers/Suppliers Form View.
+- Fix smart button alignment in brand form view
 
 Bug Tracker
 ===========
@@ -101,34 +101,37 @@ Authors
 Contributors
 ------------
 
--  Mathieu Lemercier <mathieu@netandco.net>
--  Franck Bret <franck@netandco.net>
--  Seraphine Lantible <s.lantible@gmail.com>
--  Gunnar Wagner <vrms@netcologne.de>
--  Leonardo Donelli <donelli@webmonks.it>
--  Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com>
--  Marcelo Pickler <loxamir@gmail.com>
--  Andrius Laukavičius <ala@boolit.eu> (Boolit)
--  Daniel Campos <danielcampos@avanzosc.es>
--  Samir Guesmi <samir.guesmi@acsone.eu>
--  `Tecnativa <https://www.tecnativa.com>`__
+- Mathieu Lemercier <mathieu@netandco.net>
+- Franck Bret <franck@netandco.net>
+- Seraphine Lantible <s.lantible@gmail.com>
+- Gunnar Wagner <vrms@netcologne.de>
+- Leonardo Donelli <donelli@webmonks.it>
+- Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com>
+- Marcelo Pickler <loxamir@gmail.com>
+- Andrius Laukavičius <ala@boolit.eu> (Boolit)
+- Daniel Campos <danielcampos@avanzosc.es>
+- Samir Guesmi <samir.guesmi@acsone.eu>
+- `Tecnativa <https://www.tecnativa.com>`__
 
-   -  David Vidal
-   -  João Marques
+  - David Vidal
+  - João Marques
 
--  Kaushal Prajapati <kbprajapati@live.com>
--  `Jarsa <https://www.jarsa.com>`__
+- Kaushal Prajapati <kbprajapati@live.com>
+- `Jarsa <https://www.jarsa.com>`__
 
-   -  Alan Ramos
+  - Alan Ramos
 
--  `NuoBiT Solutions <https://www.nuobit.com>`__
+- `NuoBiT Solutions <https://www.nuobit.com>`__
 
-   -  Eric Antones <eantones@nuobit.com>
+  - Eric Antones <eantones@nuobit.com>
 
--  `Trobz <https://trobz.com>`__:
+- `Trobz <https://trobz.com>`__:
 
-   -  Thao Le <thaolt@trobz.com>
-   -  Do Anh Duy <duyda@trobz.com>
+  - Thao Le <thaolt@trobz.com>
+  - Do Anh Duy <duyda@trobz.com>
+
+- Juliano Henriquez <juliano@consultoriahenca.com> - Santo Domingo,
+  República Dominicana
 
 Maintainers
 -----------
