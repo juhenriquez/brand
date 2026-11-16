@@ -7,7 +7,7 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class CommonCase(BaseCommon):
-    _test_user_groups = ("base.group_partner_manager", "product.group_product_manager")
+    _test_user_groups = ("product.group_product_manager",)
 
     @classmethod
     def setUpClass(cls):

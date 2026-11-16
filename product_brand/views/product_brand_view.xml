@@ -34,7 +34,7 @@
                             name="%(action_open_brand_products)d"
                             type="action"
                             class="oe_stat_button"
-                            icon="fa-cubes"
+                            icon="view_list"
                             context="{'default_product_brand_id': id}"
                         >
                             <field
@@ -154,7 +154,7 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_kanban_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']/.." position="after">
+            <xpath expr="//field[@name='name']/../.." position="after">
                 <div>
                     <a t-if="record.product_brand_id" type="open">
                         <field name="product_brand_id" widget="many2one" />
@@ -193,5 +193,6 @@
         name="Product Brands"
         action="action_product_brand"
         parent="sale.product_menu_catalog"
+        groups="sales_team.group_sale_manager"
     />
 </odoo>
