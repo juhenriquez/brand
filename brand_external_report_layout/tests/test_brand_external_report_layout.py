@@ -3,8 +3,9 @@
 
 from lxml import html
 
+from odoo.modules.migration import exec_script
 from odoo.tests import Form, TransactionCase, tagged
-from odoo.tools import BinaryValue, is_html_empty
+from odoo.tools import BinaryValue, file_path, is_html_empty
 
 
 @tagged("post_install", "-at_install")
@@ -79,6 +80,35 @@ class TestBrandExternalReportLayout(TransactionCase):
         wizard._onchange_logo()
         self.assertEqual(wizard.primary_color, "#123456")
         self.assertEqual(wizard.secondary_color, "#654321")
+
+    def test_migrate_legacy_brand_font(self):
+        other_brand = self.env["res.brand"].create(
+            {"name": "Other Brand", "font": "Roboto"}
+        )
+        brands = self.brand | other_brand
+        brands.flush_recordset(["font"])
+        self.env.cr.execute(
+            "UPDATE res_brand SET font = %s WHERE id = %s",
+            ("Fira_Mono", self.brand.id),
+        )
+        self.brand.invalidate_recordset(["font"])
+        self.assertEqual(self.brand.font, "Fira_Mono")
+        migration_path = file_path(
+            "brand_external_report_layout/migrations/20.0.1.0.0/pre-migration.py"
+        )
+        for execution in range(2):
+            with self.subTest(execution=execution):
+                exec_script(
+                    self.env.cr,
+                    "19.0.1.0.0",
+                    migration_path,
+                    "brand_external_report_layout",
+                    "pre",
+                    "20.0.1.0.0",
+                )
+                brands.invalidate_recordset(["font"])
+                self.assertEqual(self.brand.font, "Noto_Sans_Mono")
+                self.assertEqual(other_brand.font, "Roboto")
 
     def test_default_colors_without_logo(self):
         self.brand.write(

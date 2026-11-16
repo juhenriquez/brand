@@ -1,14 +1,12 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from typing import ClassVar
-
 from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
     _name = "sale.order"
-    _inherit: ClassVar = ["sale.order", "res.brand.mixin"]
+    _inherit = ["sale.order", "res.brand.mixin"]
 
     brand_id = fields.Many2one()
 
